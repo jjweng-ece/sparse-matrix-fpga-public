@@ -1,0 +1,62 @@
+{
+  "phase": "4D",
+  "stage": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+  "status": "PASS",
+  "cases": 131,
+  "commands": [
+    {
+      "argv": [
+        "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-version"
+      ],
+      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vlib.exe",
+        "work"
+      ],
+      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vlog.exe",
+        "-sv",
+        "+define+WITH_CSR",
+        "matrix_mac.sv",
+        "matrix_dense.sv",
+        "matrix_csr.sv",
+        "tb_matrix.sv"
+      ],
+      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "work.tb_matrix",
+        "-do",
+        "onerror {quit -code 1}; run -all; quit -code 0"
+      ],
+      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+      "exit_code": 0
+    }
+  ],
+  "sha256": {
+    "rtl/gate4/matrix_mac.sv": "fb1c7dedc445350d6bc1261885fca269543429d0ff45fdc7703e1537e18b6896",
+    "rtl/gate4/matrix_dense.sv": "5197a3ee8d0bb53b5ec9d49f0024280da7f7cbe069b26b74a69a0d6cb557025d",
+    "rtl/gate4/matrix_csr.sv": "dc65cefa6883ff10b05d12fa077ff230f375efdc5a2d0131a2c43e7e3ad9d8fa",
+    "tb/tb_matrix.sv": "883144402ff294626c1458a600e8012e2ae834c2bd44cc2b9e588d5acf0f4899",
+    "scripts/run_gate4.py": "5455048668e20ba6e9212f2c8e30c27258c9cae096b588d96a86c398b8c2f30a",
+    "scripts/gate4_vectors.py": "388a759521a7ffe26b5643711162176fd7227f840d20496489ccd71f2e803261",
+    "model/matrix_golden.py": "cf91931354eebb2b001909710f34bedea727da924b51b390913f6219ec92a284",
+    "docs/GATE4_SPEC.md": "550855ebdbbaae4e6c791392f5694aac0613f52b53e188d076b822425d5e4096"
+  },
+  "log_root": "results\\logs\\gate4_4D_20261103T024419411095+0800",
+  "vectors_sha256": "70cbbe4b5287b3065dfb69a7323da54154e9b679d0b769ad152e3b724956d7b7"
+}

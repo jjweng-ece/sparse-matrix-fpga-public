@@ -1,0 +1,16 @@
+Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+
+# 10.1d
+
+# vsim -do {onerror {quit -code 1}; run -all; quit -code 0} -c -onfinish exit work.tb_matrix 
+# Loading sv_std.std
+# Loading work.tb_matrix
+# Loading work.matrix_dense
+# Loading work.matrix_mac
+# Loading work.matrix_csr
+# onerror {quit -code 1} 
+#  Warning: onerror command for use within macro
+#  run -all 
+# PASS MATRIX cases=131 output_checks=2144 rejection_checks=9 resets=142
+# ** Note: $finish    : tb_matrix.sv(177)
+#    Time: 492436 ns  Iteration: 0  Instance: /tb_matrix

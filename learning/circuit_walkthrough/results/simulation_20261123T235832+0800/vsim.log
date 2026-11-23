@@ -1,0 +1,32 @@
+Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+
+# 10.1d
+
+# vsim -do {run -all; quit -code 0} -c -onfinish exit work.tb_circuit_walkthrough 
+# Loading sv_std.std
+# Loading work.tb_circuit_walkthrough
+# Loading work.matrix_mac
+# Loading work.matrix_dense_memce
+# Loading work.sync_read_ram
+# Loading work.matrix_csr
+# run -all 
+# RESULT i=0 dense=2 csr=2 golden=2
+# RESULT i=1 dense=-2 csr=-2 golden=-2
+# RESULT i=2 dense=12 csr=12 golden=12
+# RESULT i=3 dense=1 csr=1 golden=1
+# RESULT i=4 dense=0 csr=0 golden=0
+# RESULT i=5 dense=0 csr=0 golden=0
+# RESULT i=6 dense=0 csr=0 golden=0
+# RESULT i=7 dense=0 csr=0 golden=0
+# RESULT i=8 dense=-3 csr=-3 golden=-3
+# RESULT i=9 dense=0 csr=0 golden=0
+# RESULT i=10 dense=-1 csr=-1 golden=-1
+# RESULT i=11 dense=-2 csr=-2 golden=-2
+# RESULT i=12 dense=4 csr=4 golden=4
+# RESULT i=13 dense=4 csr=4 golden=4
+# RESULT i=14 dense=-4 csr=-4 golden=-4
+# RESULT i=15 dense=0 csr=0 golden=0
+# COUNTERS dense_cycles=178 csr_cycles=90 dense_mac=64 csr_mac=16
+# PASS_CIRCUIT_WALKTHROUGH mac_checks=12 matrix_outputs=32
+# ** Note: $finish    : tb_circuit_walkthrough.sv(88)
+#    Time: 5382 ns  Iteration: 0  Instance: /tb_circuit_walkthrough

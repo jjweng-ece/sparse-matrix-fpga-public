@@ -1,0 +1,59 @@
+{
+  "status": "PASS_ACTUAL_MODELSIM_CIRCUIT_WALKTHROUGH",
+  "scope": "Small teaching simulation; not a replacement for full verified regressions",
+  "stage": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+  "seed": "directed fixed vectors, no randomness",
+  "clock_period_ns": 20,
+  "commands": [
+    {
+      "argv": [
+        "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-version"
+      ],
+      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vlib.exe",
+        "work"
+      ],
+      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vlog.exe",
+        "-sv",
+        "matrix_mac.sv",
+        "matrix_csr.sv",
+        "matrix_dense_memce.sv",
+        "sync_read_ram.sv",
+        "tb_circuit_walkthrough.sv"
+      ],
+      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "work.tb_circuit_walkthrough",
+        "-do",
+        "run -all; quit -code 0"
+      ],
+      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "rtl\\gate4\\matrix_mac.sv": "fb1c7dedc445350d6bc1261885fca269543429d0ff45fdc7703e1537e18b6896",
+    "rtl\\gate4\\matrix_csr.sv": "dc65cefa6883ff10b05d12fa077ff230f375efdc5a2d0131a2c43e7e3ad9d8fa",
+    "ai_lab\\memory_enable\\rtl\\matrix_dense_memce.sv": "70b136c8e6f7459e31942377a6bd0c3a521d0248dff81f6705ef2b68b7f02bfd",
+    "ai_lab\\memory_enable\\rtl\\sync_read_ram.sv": "499ab82be05d9a8f2afde1a1a87cb4a73dcb2cd233500a2f2d67d6ee6919b68d",
+    "learning\\circuit_walkthrough\\tb_circuit_walkthrough.sv": "af104412ec360bb74b1aa6ea298ec3fe4c3583070cf6de9a26dec980597e5403"
+  },
+  "hardware_operations": 0
+}

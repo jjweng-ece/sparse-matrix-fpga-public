@@ -1,0 +1,9 @@
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module matrix_mac
+-- Compiling module matrix_csr
+-- Compiling module matrix_dense_memce
+-- Compiling module sync_read_ram
+-- Compiling module tb_circuit_walkthrough
+
+Top level modules:
+	tb_circuit_walkthrough
