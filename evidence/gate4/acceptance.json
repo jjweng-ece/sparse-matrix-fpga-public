@@ -1,6 +1,6 @@
 {
   "phase": "4D",
-  "stage": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+  "stage": "<LOCAL_PATH_REDACTED>",
   "status": "PASS",
   "cases": 131,
   "commands": [
@@ -9,7 +9,7 @@
         "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vsim.exe",
         "-version"
       ],
-      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+      "cwd": "<LOCAL_PATH_REDACTED>",
       "exit_code": 0
     },
     {
@@ -17,7 +17,7 @@
         "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vlib.exe",
         "work"
       ],
-      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+      "cwd": "<LOCAL_PATH_REDACTED>",
       "exit_code": 0
     },
     {
@@ -30,7 +30,7 @@
         "matrix_csr.sv",
         "tb_matrix.sv"
       ],
-      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+      "cwd": "<LOCAL_PATH_REDACTED>",
       "exit_code": 0
     },
     {
@@ -43,7 +43,7 @@
         "-do",
         "onerror {quit -code 1}; run -all; quit -code 0"
       ],
-      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\matrix_gate4_pp_lf0wd",
+      "cwd": "<LOCAL_PATH_REDACTED>",
       "exit_code": 0
     }
   ],

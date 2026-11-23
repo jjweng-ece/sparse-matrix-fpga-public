@@ -1,7 +1,7 @@
 {
   "status": "PASS_ACTUAL_MODELSIM_CIRCUIT_WALKTHROUGH",
   "scope": "Small teaching simulation; not a replacement for full verified regressions",
-  "stage": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+  "stage": "<LOCAL_PATH_REDACTED>",
   "seed": "directed fixed vectors, no randomness",
   "clock_period_ns": 20,
   "commands": [
@@ -10,7 +10,7 @@
         "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vsim.exe",
         "-version"
       ],
-      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+      "cwd": "<LOCAL_PATH_REDACTED>",
       "exit_code": 0
     },
     {
@@ -18,7 +18,7 @@
         "C:\\altera\\13.0sp1\\modelsim_ase\\win32aloem\\vlib.exe",
         "work"
       ],
-      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+      "cwd": "<LOCAL_PATH_REDACTED>",
       "exit_code": 0
     },
     {
@@ -31,7 +31,7 @@
         "sync_read_ram.sv",
         "tb_circuit_walkthrough.sv"
       ],
-      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+      "cwd": "<LOCAL_PATH_REDACTED>",
       "exit_code": 0
     },
     {
@@ -44,7 +44,7 @@
         "-do",
         "run -all; quit -code 0"
       ],
-      "cwd": "C:\\Users\\wuj35\\AppData\\Local\\Temp\\circuit_teaching_0_nltns5",
+      "cwd": "<LOCAL_PATH_REDACTED>",
       "exit_code": 0
     }
   ],

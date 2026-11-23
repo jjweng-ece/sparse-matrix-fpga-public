@@ -362,7 +362,7 @@
       "source": "learning/circuit_walkthrough/results/simulation_20261123T105513+0800/golden.json",
       "public_path": "learning/circuit_walkthrough/results/simulation_20261123T105513+0800/golden.json",
       "original_sha256": "139e076bd9794e0e11d17365ba4103b67b543fcfa4ed844d5462209f1ce1a5ea",
-      "public_sha256": "139e076bd9794e0e11d17365ba4103b67b543fcfa4ed844d5462209f1ce1a5ea",
+      "public_sha256": "5e2dedcb758248ed96ae837c77f965b94834476cba28df4add8e448da6c19a68",
       "redacted_machine_paths": true
     },
     {
@@ -383,7 +383,7 @@
       "source": "learning/circuit_walkthrough/results/simulation_20261123T105513+0800/run.json",
       "public_path": "learning/circuit_walkthrough/results/simulation_20261123T105513+0800/run.json",
       "original_sha256": "938170e414edd3f9b451fc9990da7f78dc1d346896e91d5ce2cf0a42320319a3",
-      "public_sha256": "938170e414edd3f9b451fc9990da7f78dc1d346896e91d5ce2cf0a42320319a3",
+      "public_sha256": "9bb4fced50e317453c6bd86f85e4aaa45c1235d7d89f3ee2a1184556bf6a7d40",
       "redacted_machine_paths": true
     },
     {
@@ -481,7 +481,7 @@
       "source": "learning/circuit_walkthrough/results/simulation_20261123T235832+0800/golden.json",
       "public_path": "learning/circuit_walkthrough/results/simulation_20261123T235832+0800/golden.json",
       "original_sha256": "139e076bd9794e0e11d17365ba4103b67b543fcfa4ed844d5462209f1ce1a5ea",
-      "public_sha256": "139e076bd9794e0e11d17365ba4103b67b543fcfa4ed844d5462209f1ce1a5ea",
+      "public_sha256": "5e2dedcb758248ed96ae837c77f965b94834476cba28df4add8e448da6c19a68",
       "redacted_machine_paths": true
     },
     {
@@ -502,7 +502,7 @@
       "source": "learning/circuit_walkthrough/results/simulation_20261123T235832+0800/run.json",
       "public_path": "learning/circuit_walkthrough/results/simulation_20261123T235832+0800/run.json",
       "original_sha256": "ca3d2d12a2ef46dacd12e3570ab555d9dd17e9643ba7a19e011746ad93e025ee",
-      "public_sha256": "ca3d2d12a2ef46dacd12e3570ab555d9dd17e9643ba7a19e011746ad93e025ee",
+      "public_sha256": "9bb4fced50e317453c6bd86f85e4aaa45c1235d7d89f3ee2a1184556bf6a7d40",
       "redacted_machine_paths": true
     },
     {
@@ -670,7 +670,7 @@
       "source": "results/gate4/4D/20261103T024419411095+0800/acceptance.json",
       "public_path": "evidence/gate4/acceptance.json",
       "original_sha256": "1d63270aec4605e2ae0301eb621ed70ce624de9cf4b7efe5a7fb504fc35c9c1e",
-      "public_sha256": "1d63270aec4605e2ae0301eb621ed70ce624de9cf4b7efe5a7fb504fc35c9c1e",
+      "public_sha256": "b0a9286b42eee0239eac2e12126ccac6ecc238ef4468679bd71a0f108a5c04f1",
       "redacted_machine_paths": true
     },
     {
