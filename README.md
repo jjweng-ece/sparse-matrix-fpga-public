@@ -1,6 +1,7 @@
 # Sparse Matrix FPGA
 
-**AI 加速器之稀疏矩陣運算與低功耗硬體架構探討與設計**  
+**AI 加速器之稀疏矩陣運算與低功耗硬體架構探討與設計**
+
 《半導體世界》課程報告延伸 Side Project · SystemVerilog / Python / ModelSim / Terasic SoCKit
 
 ## 直接體驗，不需要板卡
@@ -8,6 +9,8 @@
 **[公開互動展示網站](https://sparse-matrix-fpga-jjweng.thoughtfulknoll64.chatgpt.site)**
 
 CSR 編碼與乘加共有 70 個可播放／拖曳步驟；另有真實 ModelSim 取樣、兩版 LED 說明、保存的實板結果及 1080p／4K 影片。手機可以操作，不需登入。這是教學與保存證據，不是遠端 FPGA 控制服務。
+
+原本的 [AI 手寫數字應用 Demo](https://sparse-matrix-fpga-jjweng.thoughtfulknoll64.chatgpt.site/ai/) 也保留：比較不同剪枝設定的辨識結果、MAC、週期與 4×4 排程。使用固定 UCI digits 樣本，不需現場手寫；此頁數值屬保存的 RTL 模擬，實板證據另列。
 
 This public snapshot contains original hardware and verification source, selected real evidence, and the static website. The complete private research archive and its history are preserved separately. Third-party slides, vendor IP binaries and local transport metadata are omitted.
 

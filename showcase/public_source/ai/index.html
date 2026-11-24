@@ -1,0 +1,29 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>稀疏矩陣實驗台｜AI 加速器研究</title><link rel="icon" href="data:,"><link rel="stylesheet" href="./style.css"></head><body><aside class="public-banner"><a href="../">回到 CSR 教學</a> · <a href="../#board">保存的 SoCKit 板測結果</a><p>這是原本的 AI 稀疏矩陣實驗台：固定手寫數字、剪枝／準確率取捨與 RTL 模擬比較。沒有刪除舊展示；此頁現在也可公開觀看。它不接板卡、不重新執行 FPGA，也不是自由手寫辨識服務。</p></aside>
+<!-- Visual system: warm paper #f4f2ec / ink #182b35 / rust #a84724;
+     heading 32px, body 16px, 8px spacing rhythm. Three functional research views.
+     All illustrations are data visualizations of actual matrices, not brand art. -->
+<header><div class="eyebrow">SoCKit / Cyclone V · INT8 × INT8 → INT32</div><h1>稀疏矩陣實驗台<span>從 AI 權重，看見硬體的取捨</span></h1>
+<p>AI 加速器之稀疏矩陣運算與低功耗硬體架構探討與設計</p></header>
+<div id="fatal" role="alert" hidden></div>
+<main><div class="toolbar"><label>權重設定 <select id="profile" aria-label="選擇剪枝程度"></select></label>
+<span class="source">數值來源：ModelSim RTL 模擬</span><button id="export">匯出比較 CSV</button></div>
+<nav aria-label="研究檢視"><button class="active" data-tab="compare">01 運算比較</button><button data-tab="matrix">02 矩陣與排程</button><button data-tab="evidence">03 證據與限制</button></nav>
+<section id="compare" class="view"><div class="intro"><h2>相同的資料，兩條計算路徑。</h2><p>真實手寫數字資料訓練的 64 → 10 線性分類層。比較的是同一份剪枝後權重，兩個引擎各使用一個 MAC。</p></div>
+<div class="stats"><article><small>權重實際零值比例</small><strong id="zeros"></strong><p>量化本身也可能產生零值</p></article><article><small>整個 holdout 的分類正確率</small><strong id="accuracy"></strong><p id="accuracy-detail"></p></article><article><small>CSR kernel 週期加速比</small><strong id="speedup"></strong><p>不含壓縮、載入與通訊</p></article></div>
+<div class="split"><article class="panel"><h3>這次輸入的是什麼？</h3><p>固定保留測試集中的前四張；沒有依辨識結果挑圖。</p><div id="samples"></div><p class="footnote">影像為 UCI digits 8×8 原始像素；不是即時攝影機。預測由已驗證的整數輸出加 PC bias 計算。硬體結果一致，不代表模型一定辨識正確。</p></article>
+<article class="panel"><h3>48 個區塊，完整算完一層</h3><div id="bars"></div><table><thead><tr><th>引擎</th><th>Kernel 週期</th><th>MAC 次數</th></tr></thead><tbody id="counts"></tbody></table><p id="equivalence" class="pass"></p><p class="footnote">10 個輸出列補成 12 列後，共 48 個 4×4 GEMM；Dense 的 3,072 次 MAC 包含 padding。權重零值比例不含 padding，CSR 也會跳過補零列。這是四張輸入的整層工作量。</p></article></div>
+<article class="panel"><h3>剪枝會省運算，也可能犧牲辨識效果</h3><div class="table-wrap"><table id="tradeoff"><thead><tr><th>額外剪枝目標</th><th>實際零值</th><th>測試集正確率</th><th>Dense 週期</th><th>CSR 週期</th><th>Kernel 加速比</th></tr></thead><tbody></tbody></table></div></article>
+<article class="panel"><h3>RTL 訊號切換基線：非功耗</h3><p>以下沿用 A1 通用核心的獨立活動量實驗，不是本次 v2 通訊整合版本的重新量測。</p><p id="activity-state">活動量資料待載入。</p><div class="table-wrap"><table><thead><tr><th>觀測範圍</th><th>Dense</th><th>CSR</th><th>差異</th></tr></thead><tbody id="activity-counts"></tbody></table></div><p class="footnote">settled bit transitions：每個模擬時間點取穩定值，計算改變的 bit 數。各欄位範圍可能重疊，不加成全晶片活動量；乘法器內部與記憶體能耗未觀測。</p></article>
+<article class="pending"><h3>低功耗研究：證據分開呈現</h3><p>本頁保留原 AI 模擬與活動量基線；後續 RAM read-enable 候選的 Power Analyzer 配對估計見主站。不能把不同版本的比例互相套用，也不能以 MAC 次數或 RTL 切換當成實際省電比例。板卡實際功率仍待測。</p></article></section>
+<section id="matrix" class="view" hidden><div class="intro"><h2>白色的位置，CSR 不安排乘法。</h2><p>藍色為負權重，橘色為正權重；白色為零。選擇區塊可檢查實際 CSR 編碼與乘法交易。</p></div>
+<article class="panel"><h3>量化後權重 W：10 × 64</h3><div class="heat-scroll"><canvas id="weights" width="1152" height="200" aria-label="10乘64權重熱圖"></canvas></div><div class="legend"><span>負值 −127</span><span>零</span><span>正值 +127</span></div></article>
+<div class="toolbar"><label>4×4 區塊 <select id="tile" aria-label="選擇矩陣區塊"></select></label><button id="play">播放教學排程</button><span id="step"></span></div>
+<p class="footnote">教學動畫依矩陣資料產生，為慢速排程示意，並非 FPGA FSM 波形或實測切換活動。</p>
+<div class="tile-grid"><article class="panel"><h3>A：4×4 權重</h3><div id="tile-a"></div></article><article class="panel"><h3>B：4×4 輸入</h3><div id="tile-b"></div></article><article class="panel"><h3>C：Golden 結果</h3><div id="tile-c"></div></article></div>
+<article class="panel"><h3>這個區塊的 CSR 儲存</h3><pre id="csr"></pre><p id="transaction"></p><p>壓縮由 PC 執行。原核心只接收 values、col_idx、row_ptr，不把壓縮時間藏進 kernel 加速比。</p></article></section>
+<section id="evidence" class="view" hidden><div class="intro"><h2>每個數字，都有來源。</h2><p>模擬驗證、編譯成功與實板執行是不同階段。</p></div>
+<div class="split"><article class="panel"><h3>這份 AI 模擬證據</h3><dl id="provenance"></dl></article><article class="panel"><h3>新版實板資料</h3><p id="live-state">A14 已保存實板結果；此頁呈現原版模擬數值，請從上方連結查看板測。</p><button id="live" disabled>公開站不連接板卡</button><p>公開展示只提供已保存資料。後續實板結果另列於主站，不以模擬代替板測。</p><pre id="live-result"></pre></article></div>
+<article class="panel"><h3>先前 LED Demo：人工實板觀察</h3><p>這些是 Gate 5C ROM 測試，不是本頁 AI 模型的實板數據。</p><div class="table-wrap"><table><thead><tr><th>測項</th><th>工作負載</th><th>實際回報</th><th>來源／狀態</th></tr></thead><tbody id="manual"></tbody></table></div></article>
+<article class="panel"><h3>可重現性與限制</h3><ul><li>固定 train/test split、模型設定、量化與剪枝；450 張 holdout 只在訓練後評估。</li><li>PC 負責前處理、CSR 壓縮、跨 tile 累加與 bias；FPGA 負責兩個矩陣乘法 kernel。</li><li>核對 kernel 周期時使用相同時脈、輸入及計數邊界；整體端到端時間需另外量測。</li><li>不宣稱此小型單 MAC 設計比 CPU／GPU 快，也不宣稱已證明板上低功耗。</li></ul></article></section>
+</main><footer>研究展示 v2 保存版 · 原創介面 MIT · 數值為既有模型／RTL 模擬；板卡功率未量測。<p>資料：Alpaydin, E. &amp; Kaynak, C. (1998), <a href="https://doi.org/10.24432/C50P49">Optical Recognition of Handwritten Digits</a>, UCI Machine Learning Repository，<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。由 scikit-learn load_digits 取得；本專案選取樣本、訓練、量化與剪枝。不是 MNIST。</p></footer><script src="./app.js"></script></body></html>

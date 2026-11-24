@@ -70,3 +70,4 @@ function tab(name){pause();stopRtl();activeTab=name;for(const el of document.que
 document.querySelectorAll('[data-tab]').forEach(button=>button.onclick=()=>tab(button.dataset.tab));
 $('#boardRows').innerHTML=D.board.map(row=>'<tr>'+['profile','dense_cycles','csr_cycles','dense_macs','csr_macs'].map(key=>`<td>${row[key]}</td>`).join('')+'</tr>').join('');
 window.demo={frames,multiplyStart,jump,tab,rtl,index:()=>+$('#step').value};render();rtl();
+const requestedTab=location.hash.slice(1);if(['csr','rtl','board','video'].includes(requestedTab))tab(requestedTab);
